@@ -15,7 +15,7 @@ export const profileBannerData: ProfileBanner = {
     backgroundImage: { url: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" },
     headline: "Robotics & Automation Engineer | Mechanical Engineering Graduate",
     resumeLink: {
-        url: "/resume.png"
+        url: process.env.PUBLIC_URL + "/resume.png"
     },
     linkedinLink: "https://www.linkedin.com/in/ghowarthan-k-5902a4284",
     profileSummary: "Passionate engineer with a strong foundation in mechanical systems and a growing expertise in robotics, automation, and AI-driven technologies. Skilled in ROS2, Python, C++, CAD & simulation (SolidWorks, ANSYS), and robotic system integration. Aspiring to build intelligent, scalable automation solutions for next-generation industries."
@@ -80,19 +80,19 @@ export const projectsData: Project[] = [
         title: "Bio composite material For Low-Weight Engineering Applications",
         description: "Investigated bio-composite material reinforced with snail shell particulates to explore potential for low-weight engineering applications.",
         techUsed: "Materials Science, Research",
-        image: { url: "/bio-composite.jpg" }
+        image: { url: process.env.PUBLIC_URL + "/bio-composite.jpg" }
     },
     {
         title: "RFID-Based Car Ignition System",
         description: "Enhanced security by requiring an RFID tag for ignition, reducing theft risk and automating ignition for smoother operations.",
         techUsed: "IoT, RFID, Automation",
-        image: { url: "/rfid-project.jpg" }
+        image: { url: process.env.PUBLIC_URL + "/rfid-project.jpg" }
     },
     {
         title: "Structural Analysis of Hybrid Composite",
         description: "Designed and analyzed a car body using hybrid composite materials in CATIA and ANSYS. Confirmed simulation accuracy with experimental validation.",
         techUsed: "CATIA, ANSYS, Simulation",
-        image: { url: "/structural-analysis.jpg" }
+        image: { url: process.env.PUBLIC_URL + "/structural-analysis.jpg" }
     }
 ];
 
@@ -135,7 +135,7 @@ export const certificationsData: Certification[] = [
 ];
 
 export const contactMeData: ContactMe = {
-    profilePicture: { url: "/profile.jpg" },
+    profilePicture: { url: process.env.PUBLIC_URL + "/profile.jpg" },
     name: "GHOWARTHAN K",
     title: "Mechanical Engineer",
     summary: "Feel free to reach out for collaborations or opportunities in Robotics and Automation.",

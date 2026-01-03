@@ -9,8 +9,8 @@ const favoriteAlbums = [
   { title: "Hotel California", artist: "The Eagles", imgSrc: albumCover1 },
   { title: "Back in Black", artist: "AC/DC", imgSrc: albumCover2 },
   { title: "Appetite for Destruction", artist: "Guns N' Roses", imgSrc: albumCover3 },
-  { title: "1989", artist: "Taylor Swift", imgSrc: "/1989.jpg" },
-  { title: "Vaaranam Aayiram", artist: "Harris Jayaraj", imgSrc: "/vaaranam-aayiram.jpg" },
+  { title: "1989", artist: "Taylor Swift", imgSrc: process.env.PUBLIC_URL + "/1989.jpg" },
+  { title: "Vaaranam Aayiram", artist: "Harris Jayaraj", imgSrc: process.env.PUBLIC_URL + "/vaaranam-aayiram.jpg" },
 ];
 
 const Music: React.FC = () => {
