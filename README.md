@@ -1,94 +1,68 @@
+# 🚀 Ghowarthan Karunanidhi | Engineering Portfolio
 
+> **Netflix-Themed Portfolio** showcasing robotics, manufacturing engineering, propulsion systems, and CAD/FEA simulation projects.
 
-## 🛠️ Tech Stack
-
-This portfolio is built with love and:
-
-- ⚛️ **React** (Frontend)
-- ☁️ **AWS S3 & CloudFront** (Hosting and CDN)
-- 🖌️ **Tailwind CSS** (Styling)
-- 🛡️ **DatoCMS** (Content Management)
-- 🧩 **Other Cool Tools**: GitHub Actions
+🔗 **Live Portfolio Link:** [https://ghowarthan.github.io/-my-portfolio/](https://ghowarthan.github.io/-my-portfolio/)
 
 ---
 
-## ⭐ Show Your Support
+## 👨‍💻 About Me
 
-If you find this project helpful or inspiring, give it a ⭐ on GitHub—it means the world to me! 🌟
-
-Happy coding! 💻✨
-
----
-
-## 📚 Getting Started
-
-Want to set this up locally? Follow these steps:
-
-1. **Clone the Repository**: Copy the repository to your local system.
-2. **Install Dependencies**: Use a package manager to install the required dependencies.
-
-```bash
-nvm install 18
-nvm use 18
-```
-
-After upgrading Node.js, clear your node_modules and reinstall:
-
-```bash
-rm -rf node_modules
-npm cache clean --force
-npm install
-```
-
-3. **Configure Environment Variables**: Create a `.env` file and set up the necessary API keys and configurations.
-4. **Run the Project**: Start the development server.
-
-```bash
-npm start
-```
-
-5. **Visit the Local Server**: Open your browser and navigate to the local server URL.
-   ![alt text](image.png)
+- 🎓 **M.S. in Robotics and Autonomous Systems (Systems Engineering)** - Arizona State University (2026 – 2028)
+- 🚀 **Propulsion Engineer** - Project BRIMSTONE (ASU Aerial, Robotics, and Control Systems)
+- 🏭 **Former Manufacturing Engineer** - Doosan Bobcat India (Portable Compressors & Backhoe Loaders)
+- 🎓 **B.E. Mechanical Engineering** - Panimalar Engineering College (GPA: 7.14/10)
+- 💼 **Open to Summer 2027 Engineering Internships** in Manufacturing, Robotics, Industrial Automation, and Supply Chain.
 
 ---
 
-## 🤝 Contribution Guidelines
+## 🛠️ Core Skills
 
-Contributions are welcome and appreciated! 🥳 To contribute:
-
-1. Fork the repository.
-2. Create a new branch for your feature or fix.
-3. Commit your changes with a descriptive message.
-4. Push your changes to your branch.
-5. Open a Pull Request. 🎉
+- **Robotics & Autonomy**: ROS 2, NVIDIA Isaac Sim & Isaac Lab, RViz, Gazebo, KUKA Robotics, GNC
+- **CAD, FEA & Simulation**: SolidWorks, ANSYS FEA, CATIA, Creo, Autodesk Fusion 360
+- **Programming**: Python, C / C++, MATLAB & Simulink, Linux (Ubuntu), Git
+- **Manufacturing & Industrial Eng**: EBOM to MBOM, Process Routing (PFD), PFMEA & Control Plans, FAI, Lean / Kaizen / 5S, 3D Printing
 
 ---
 
-## 🐛 Issues and Feature Requests
+## 💻 Tech Stack & Architecture
 
-Found a bug? Have a feature in mind? 🤔 Feel free to raise an issue or suggest a feature!
-
-1. Go to the **Issues** tab in the repository.
-2. Click **New Issue**.
-3. Provide a clear description of the bug or feature request.
-4. If applicable, include screenshots or steps to reproduce the issue.
-
-Your feedback is valuable and helps make this project better for everyone. Thank you for contributing!
+- ⚛️ **Frontend**: React 18, TypeScript, React Router 6 (HashRouter for GitHub Pages)
+- 🎬 **Theme**: Netflix UI with custom sound, animated logo, interactive profiles, and category carousels
+- 🚀 **Deployment**: GitHub Pages via automated GitHub Actions CI/CD workflow
 
 ---
 
-## 🌟 Acknowledgments
+## 🚀 Local Development
 
-- Thanks to [DatoCMS](https://www.datocms.com) for powering the dynamic content.
-- Inspired by countless developers in the open-source community. 💻
-- Special shoutout to all contributors—you rock! 🤘
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Ghowarthan/-my-portfolio.git
+   cd -my-portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install --legacy-peer-deps
+   ```
+
+3. **Run local development server:**
+   ```bash
+   npm start
+   ```
+
+4. **Build production bundle:**
+   ```bash
+   npm run build
+   ```
+
+5. **Deploy to GitHub Pages:**
+   ```bash
+   npm run deploy
+   ```
 
 ---
-
-
 
 ## 📜 License
 
-This project is licensed under the MIT License. Feel free to use it, modify it, and share it! 🌈
-
----
+This project is licensed under the MIT License.

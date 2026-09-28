@@ -1,18 +1,22 @@
 .netflix-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   background-color: #141414;
   overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
 }
 
 .netflix-logo {
-  width: 500px;
+  width: 550px;
   height: auto;
   opacity: 0;
-  transform: scale(0.8);
-  animation: fadeIn 0.5s forwards ease-in;
+  transform: scale(0.85);
+  animation: fadeIn 0.8s forwards ease-in;
 }
 
 @keyframes fadeIn {
@@ -23,16 +27,62 @@
 }
 
 .animate.netflix-logo {
-  animation: zoomOut 3s forwards ease-in-out;
+  animation: zoomOut 3.2s forwards ease-in-out;
 }
 
 @keyframes zoomOut {
-  0%, 80% {
-    transform: scale(0.8);
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.1);
     opacity: 1;
   }
   100% {
-    transform: scale(3);
+    transform: scale(3.5);
     opacity: 0;
   }
+}
+
+.netflix-cta {
+  position: absolute;
+  bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.netflix-cta-hint {
+  color: #a3a3a3;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  animation: pulseHint 2s infinite ease-in-out;
+}
+
+@keyframes pulseHint {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+.netflix-skip-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(4px);
+}
+
+.netflix-skip-btn:hover {
+  background: #E50914;
+  border-color: #E50914;
+  transform: translateY(-1px);
 }

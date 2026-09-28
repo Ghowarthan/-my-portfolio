@@ -1,39 +1,53 @@
 import React from 'react';
 import './Blogs.css';
-import { FaMedium, FaDev } from 'react-icons/fa';
+import { FaFileAlt, FaMicrophone, FaIndustry, FaRocket } from 'react-icons/fa';
 
-const blogs = [
+const technicalArticles = [
   {
-    title: "Make Your Rails Console Look Better",
-    platform: "Medium",
-    icon: <FaMedium />,
-    link: "https://medium.com/@chintusamala96/make-your-rails-console-look-better-510988d40566",
-    description: "Learn tips to customize your Rails console for a better experience.",
+    title: "Structural Analysis & Experimental Validation of Hybrid Composite Vehicle Bodies",
+    platform: "PECMACT Conference Presentation & Research",
+    icon: <FaMicrophone />,
+    link: "https://www.linkedin.com/in/ghowarthan-k-5902a4284",
+    description: "Presented experimental validation correlating FEA predictions in ANSYS with destructive physical testing, achieving 75% weight reduction.",
   },
   {
-    title: "Docker Fundas - My Version",
-    platform: "Medium",
-    icon: <FaMedium />,
-    link: "https://medium.com/@chintusamala96/docker-fundas-my-version-7b9262bd90d4",
-    description: "An introductory guide to Docker fundamentals from my perspective.",
+    title: "Technology Transfer & Assembly Line Balancing for Portable Air Compressors",
+    platform: "Manufacturing Case Study (Doosan Bobcat)",
+    icon: <FaIndustry />,
+    link: "https://www.linkedin.com/in/ghowarthan-k-5902a4284",
+    description: "Insights on establishing greenfield assembly lines from scratch, cycle-time balancing, PFMEA, and ergonomic crane-assisted robotic assembly.",
   },
   {
-    title: "Grape Gem in Ruby on Rails: Handling User Model and API Endpoint",
-    platform: "Dev.to",
-    icon: <FaDev />,
-    link: "https://dev.to/samalasumanth0262/grape-gem-in-ruby-on-rails-handling-user-model-and-api-endpoint-g6d",
-    description: "A guide to using the Grape gem for API development in Ruby on Rails.",
+    title: "Project BRIMSTONE: Liquid-Propellant VTVL Rocket Lander Propulsion Design",
+    platform: "ASU Collegiate Propulsive Landing Challenge",
+    icon: <FaRocket />,
+    link: "https://www.linkedin.com/in/ghowarthan-k-5902a4284",
+    description: "Deep dive into sizing propellant feed systems and analyzing pressure and fluid flow for autonomous propulsive rocket landings.",
+  },
+  {
+    title: "RFID-Based Intelligent Car Ignition System with Driver License Integration",
+    platform: "Embedded Systems & IoT Architecture",
+    icon: <FaFileAlt />,
+    link: "https://www.linkedin.com/in/ghowarthan-k-5902a4284",
+    description: "Design of a tamper-resistant RFID vehicle ignition architecture ensuring vehicle activation solely with an authorized driver license tag.",
   },
 ];
 
 const Blogs: React.FC = () => {
   return (
     <div className="blogs-container">
-      <h2 className="blogs-title">✍️ My Blog Posts</h2>
-      <p className="blogs-intro">A collection of my thoughts and tutorials on software development.</p>
+      <h2 className="blogs-title">📝 Technical Articles & Research</h2>
+      <p className="blogs-intro">Presentations, case studies, and research publications in robotics, manufacturing, and aerospace systems.</p>
       <div className="blogs-grid">
-        {blogs.map((blog, index) => (
-          <a href={blog.link} key={index} target="_blank" rel="noopener noreferrer" className="blog-card" style={{ '--delay': `${index * 0.2}s` } as React.CSSProperties}>
+        {technicalArticles.map((blog, index) => (
+          <a
+            href={blog.link}
+            key={index}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="blog-card"
+            style={{ '--delay': `${index * 0.15}s` } as React.CSSProperties}
+          >
             <div className="blog-icon animated-icon">{blog.icon}</div>
             <div className="blog-info animated-text">
               <h3 className="blog-title">{blog.title}</h3>

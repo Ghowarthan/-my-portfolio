@@ -1,52 +1,65 @@
 import React, { useEffect, useState } from 'react';
 import './Skills.css';
 import { getSkills } from '../queries/getSkills';
-
-import { FaReact, FaNodeJs, FaAws, FaDocker, FaGitAlt, FaJava, FaPython, FaPrint, FaRobot, FaCogs, FaCalculator, FaCube, FaMap, FaBrain } from 'react-icons/fa';
-import { SiRubyonrails, SiTypescript, SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiHtml5, SiCss3, SiRabbitmq, SiImessage, SiMongodb, SiExpress, SiJavascript, SiCplusplus, SiAnsys, SiAutodesk } from 'react-icons/si';
+import {
+  FaPython,
+  FaPrint,
+  FaRobot,
+  FaCogs,
+  FaCalculator,
+  FaCube,
+  FaMap,
+  FaBrain,
+  FaLinux,
+  FaTools,
+  FaGitAlt,
+  FaFileAlt,
+  FaClipboardCheck,
+  FaCheckCircle,
+  FaChartLine,
+  FaTasks,
+  FaIndustry,
+  FaComments,
+  FaUsers
+} from 'react-icons/fa';
+import {
+  SiCplusplus,
+  SiAnsys,
+  SiAutodesk,
+  SiNvidia
+} from 'react-icons/si';
 import { Skill } from '../types';
 
 const iconMap: { [key: string]: JSX.Element } = {
-  SiRubyonrails: <SiRubyonrails />,
-  FaNodeJs: <FaNodeJs />,
-  SiSpringboot: <SiSpringboot />,
-  FaJava: <FaJava />,
-  SiPhp: <SiPhp />,
-  FaReact: <FaReact />,
-  SiTypescript: <SiTypescript />,
-  FaAws: <FaAws />,
-  FaDocker: <FaDocker />,
-  SiPostgresql: <SiPostgresql />,
-  SiMysql: <SiMysql />,
-  SiKubernetes: <SiKubernetes />,
-  SiGooglecloud: <SiGooglecloud />,
-  SiHeroku: <SiHeroku />,
-  SiNetlify: <SiNetlify />,
-  SiRabbitmq: <SiRabbitmq />,
-  SiImessage: <SiImessage />,
-  SiMongodb: <SiMongodb />,
-  SiExpress: <SiExpress />,
-  SiJavascript: <SiJavascript />,
-  SiHtml5: <SiHtml5 />,
-  SiCss3: <SiCss3 />,
   FaPython: <FaPython />,
-  SiRos: <FaRobot />, // Using generic robot for ROS if SiRos is unavailable or for style
-  SiGazebo: <FaCube />,
-  SiRviz: <FaCube />,
-  SiHectorSlam: <FaMap />,
-  SiMachineLearning: <FaBrain />,
   SiCplusplus: <SiCplusplus />,
+  SiMathworks: <FaCalculator />,
+  FaLinux: <FaLinux />,
+  FaTools: <FaTools />,
+  FaGitAlt: <FaGitAlt />,
+  SiRos: <FaRobot />,
+  SiNvidia: <SiNvidia />,
+  SiRviz: <FaCube />,
+  SiGazebo: <FaCube />,
+  FaRobot: <FaRobot />,
+  FaBrain: <FaBrain />,
   SiSolidworks: <FaCogs />,
   SiAnsys: <SiAnsys />,
-  SiMathworks: <FaCalculator />,
   SiAutodesk: <SiAutodesk />,
+  FaCogs: <FaCogs />,
+  FaMap: <FaMap />,
+  FaFileAlt: <FaFileAlt />,
+  FaClipboardCheck: <FaClipboardCheck />,
+  FaCheckCircle: <FaCheckCircle />,
+  FaChartLine: <FaChartLine />,
   FaPrint: <FaPrint />,
-  FaGitAlt: <FaGitAlt />,
+  FaTasks: <FaTasks />,
+  FaIndustry: <FaIndustry />,
+  FaComments: <FaComments />,
+  FaUsers: <FaUsers />,
 };
 
-
 const Skills: React.FC = () => {
-
   const [skillsData, setSkillsData] = useState<Skill[]>([]);
 
   useEffect(() => {
@@ -54,40 +67,43 @@ const Skills: React.FC = () => {
       const data = await getSkills();
       setSkillsData(data);
     }
-
-    fetchSkills()
+    fetchSkills();
   }, []);
 
-  if (skillsData.length === 0) return <div>Loading...</div>;
+  if (skillsData.length === 0) {
+    return <div style={{ color: '#fff', textAlign: 'center', marginTop: '100px' }}>Loading...</div>;
+  }
 
-  const skillsByCategory = skillsData.reduce((acc: any, skill: any) => {
+  const skillsByCategory = skillsData.reduce((acc: Record<string, Skill[]>, skill: Skill) => {
     if (!acc[skill.category]) acc[skill.category] = [];
     acc[skill.category].push(skill);
     return acc;
   }, {});
 
-
   return (
     <div className="skills-container">
+      <div className="skills-header">
+        <h2 className="skills-main-title">🛠️ Technical Skills & Tools</h2>
+        <p className="skills-subtitle">
+          Core competencies spanning robotics autonomy, CAD/FEA simulation, programming, and industrial manufacturing.
+        </p>
+      </div>
+
       {Object.keys(skillsByCategory).map((category, index) => (
-        <div key={index} className="skill-category">
+        <section key={index} className="skill-category">
           <h3 className="category-title">{category}</h3>
           <div className="skills-grid">
-            {skillsByCategory[category].map((skill: any, idx: number) => (
+            {skillsByCategory[category].map((skill, idx) => (
               <div key={idx} className="skill-card">
-                <div className="icon">{iconMap[skill.icon] || <FaReact />}</div>
-                <h3 className="skill-name">
-                  {skill.name.split('').map((letter: any, i: number) => (
-                    <span key={i} className="letter" style={{ animationDelay: `${i * 0.05}s` }}>
-                      {letter}
-                    </span>
-                  ))}
-                </h3>
+                <div className="skill-icon-wrapper">
+                  {iconMap[skill.icon] || <FaCogs />}
+                </div>
+                <h4 className="skill-name">{skill.name}</h4>
                 <p className="skill-description">{skill.description}</p>
               </div>
             ))}
           </div>
-        </div>
+        </section>
       ))}
     </div>
   );

@@ -1,78 +1,57 @@
 import React, { useEffect, useState } from 'react';
 import './Projects.css';
-import { FaReact, FaNodeJs, FaAws, FaDatabase, FaDocker, FaAngular, FaGithub, FaGitlab, FaGoogle, FaJava, FaJenkins, FaMicrosoft, FaPython, FaVuejs } from 'react-icons/fa';
-import { SiRubyonrails, SiPostgresql, SiMongodb, SiMaterialdesign, SiHtml5, SiCss3, SiJquery, SiAwsamplify, SiFirebase, SiTerraform, SiArgo } from 'react-icons/si';
+import {
+  FaRocket,
+  FaCogs,
+  FaRobot,
+  FaMicrochip,
+  FaVial,
+  FaBroadcastTower,
+  FaBrain,
+  FaCar,
+  FaLeaf,
+  FaPython,
+  FaReact
+} from 'react-icons/fa';
+import { SiAnsys, SiAutodesk, SiCplusplus } from 'react-icons/si';
 import { Project } from '../types';
 import { getProjects } from '../queries/getProjects';
-import { GrDeploy, GrKubernetes } from "react-icons/gr";
 
 const techIcons: { [key: string]: JSX.Element } = {
-  "ReactJS": <FaReact />,
-  "NodeJS": <FaNodeJs />,
-  "AWS": <FaAws />,
-  "PostgreSQL": <SiPostgresql />,
-  "MongoDB": <SiMongodb />,
-  "Ruby On Rails": <SiRubyonrails />,
-  "Material UI": <SiMaterialdesign />,
-  "HTML5": <SiHtml5 />,
-  "CSS3": <SiCss3 />,
-  "jQuery": <SiJquery />,
-  "AWS-ECS": <SiAwsamplify />,
-  'Cognito': <FaAws />,
-  'Lambda': <FaAws />,
-  'ECS': <FaAws />,
-  'Jenkins': <FaJenkins />,
-  'Docker': <FaDocker />,
-  'GraphQL': <FaDatabase />,
-  'CI/CD': <FaGitlab />,
-  'GitLab': <FaGitlab />,
-  'GitHub': <FaGithub />,
-  'Heroku': <GrDeploy />,
-  'Netlify': <GrDeploy />,
-  'Firebase': <SiFirebase />,
-  'GCP': <FaGoogle />,
-  'Azure': <FaMicrosoft />,
-  'Kubernetes': <GrKubernetes />,
-  'Terraform': <SiTerraform />,
-  'ArgoCD': <SiArgo />,
-  'Java': <FaJava />,
-  'Spring Boot': <FaJava />,
-  'Python': <FaPython />,
-  'Node.js': <FaNodeJs />,
-  'Express.js': <FaNodeJs />,
-  'Hibernate': <FaJava />,
-  'Maven': <FaJava />,
-  'Gradle': <FaJava />,
-  'JUnit': <FaJava />,
-  'Mockito': <FaJava />,
-  'Jest': <FaReact />,
-  'React': <FaReact />,
-  'Angular': <FaAngular />,
-  'Vue.js': <FaVuejs />,
-  'Next.js': <FaReact />,
-  'Gatsby': <FaReact />,
-  'Nuxt.js': <FaVuejs />,
-  'Redux': <FaReact />,
-  'Vuex': <FaVuejs />,
-  'Tailwind CSS': <SiCss3 />,
-  'Bootstrap': <SiCss3 />,
-  'JQuery': <SiJquery />,
+  "Propulsion": <FaRocket />,
+  "Fluid Dynamics": <FaRocket />,
+  "GNC": <FaRobot />,
+  "Autonomous Systems": <FaBrain />,
+  "SolidWorks": <FaCogs />,
+  "CATIA": <SiAutodesk />,
+  "ANSYS": <SiAnsys />,
+  "FEA Simulation": <SiAnsys />,
+  "Composite Materials": <FaCar />,
+  "Mechanical Testing": <FaVial />,
+  "Embedded C": <SiCplusplus />,
+  "RFID": <FaBroadcastTower />,
+  "IoT": <FaMicrochip />,
+  "Automotive Electronics": <FaCar />,
+  "Circuit Design": <FaMicrochip />,
+  "Materials Science": <FaVial />,
+  "Biocomposites": <FaLeaf />,
+  "Sustainable Engineering": <FaLeaf />,
+  "Python": <FaPython />,
+  "React": <FaReact />
 };
 
-
 const Projects: React.FC = () => {
-  const [projects, setProjects] = useState<Project[]>([])
-  
-  useEffect(() => { 
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
     async function fetchProjects() {
       const data = await getProjects();
       setProjects(data);
     }
-    
-    fetchProjects()
-  }, [])
-  
-  if (projects.length === 0) return <div>Loading...</div>;
+    fetchProjects();
+  }, []);
+
+  if (projects.length === 0) return <div style={{ color: '#fff', textAlign: 'center', marginTop: '100px' }}>Loading...</div>;
 
   return (
     <div className="projects-container">

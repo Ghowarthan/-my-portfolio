@@ -2,24 +2,123 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: calc(100vh - 100px);
+  padding: 6rem 20px 3rem 20px;
 }
 
 .work-permit-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  padding: 25px 35px;
-  max-width: 500px;
-  text-align: center;
+  background-color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+  padding: 36px 40px;
+  max-width: 680px;
+  width: 100%;
+  color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeInUp 0.5s ease-out;
-  color: #333;
+  animation: fadeInUp 0.6s ease-out both;
 }
 
 .work-permit-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 44px rgba(229, 9, 20, 0.2);
+  border-color: rgba(229, 9, 20, 0.4);
+}
+
+.work-permit-header {
+  text-align: center;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.visa-badge-icon {
+  font-size: 2.8rem;
+  color: #E50914;
+  margin-bottom: 12px;
+}
+
+.work-permit-headline {
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+}
+
+.visa-status-pill {
+  background: rgba(229, 9, 20, 0.15);
+  border: 1px solid #E50914;
+  color: #ff4d58;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 6px 16px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.work-permit-details {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.work-permit-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 16px 20px;
+  border-radius: 10px;
+  transition: background 0.25s ease;
+}
+
+.work-permit-row:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.work-permit-row.highlight-row {
+  border-left: 4px solid #10b981;
+  background: rgba(16, 185, 129, 0.06);
+}
+
+.work-permit-row.highlight-row:hover {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.row-icon {
+  font-size: 1.4rem;
+  color: #10b981;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.work-permit-row:first-child .row-icon {
+  color: #3b82f6;
+}
+
+.work-permit-row:last-child .row-icon {
+  color: #f59e0b;
+}
+
+.row-content h4 {
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.row-content p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #c7c7c7;
+  line-height: 1.5;
+}
+
+.row-content p strong {
+  color: #ffffff;
 }
 
 @keyframes fadeInUp {
@@ -33,26 +132,15 @@
   }
 }
 
-.work-permit-headline {
-  font-size: 2rem;
-  color: #e50914;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.work-permit-summary {
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.6;
-}
-
-.work-permit-summary strong {
-  color: #e50914;
-}
-
-.additional-info {
-  font-size: 1rem;
-  color: #333;
-  margin-top: 20px;
-  font-style: italic;
+@media (max-width: 600px) {
+  .work-permit-card {
+    padding: 24px 18px;
+  }
+  .work-permit-headline {
+    font-size: 1.6rem;
+  }
+  .work-permit-row {
+    padding: 14px 14px;
+    gap: 12px;
+  }
 }
